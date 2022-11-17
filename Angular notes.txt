@@ -1,0 +1,96 @@
+C:\ProgramData\chocolatey\bin\choco.exe
+Setup Typescript
+1. Install Node.js
+2. Open Visual Studio Code in Admin
+3. run cmd at terminal: npm --init (to generate package.json)
+4. run cmd at terminal: npm i typescript (to generate module)
+5. run cmd at terminal: npx tsc --init (to generate tsconfig.json)
+6. run cmd at terminal: npx tsc on the ts file (compile a js file as output) OR tsc.cmd
+
+Diff between SPA and MPA
+https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58 
+
+Library: Angular Slash Router
+SEO: SSR (server side rendering)
+
+Syntax:
+let keyword is use for declaration
+
+Setup Angular
+1. run cmd: D: //to the drive d
+2. run cmd: cd D:\"Angular Tut" //to the directory u prefer
+3. run cmd: npm i @angular/cli -g //to install angular
+Ensure the environment variable is:
+C:\Users\User\AppData\Roaming\npm\node_modules\@angular\cli
+C:\Users\User\AppData\Roaming\npm
+
+4. run cmd: cd D:\"Angular Tut"\"Angular Tut" //to change directory for workspace
+5. run cmd: ng new [name] --create-application=false //to create new workspace
+
+6. run cmd at terminal: npm i (by focusing on the package.json)
+7. restart ur machine if error occur
+8. or else change the version of nodejs
+
+9. Right click on the root folder (project folder) > Open with Integrated terminal 
+10. run cmd at terminal: ng g app realinventory
+https://www.c-sharpcorner.com/article/how-to-fix-ps1-can-not-be-loaded-because-running-scripts-is-disabled-on-this-sys/ (if not working)
+
+Alternative from step 5-10:
+11. Delete realinventory folder > run cmd: ng new hotelinventoryapp
+12. To uninstall angular: npm uninstall -g @angular/cli
+
+Note: 
+-Angular.json is a file that relates to your workspace.
+-Polyfills is for the dev to add extra features / codes like animation into certain version of browser.
+-In angular.json, sourceRoot is all the files that will be use in app
+-styles allow u to add bootstrap 
+-Component, Directives and Pipes will be registered in the Declaration
+-Decorator modifies the behaviour of our classes
+-spec.ts is use for unit test
+
+Note for files:
+-app.component.ts template properties will override the output in the app.component.html
+-if angular.json -> prefix: hinv; then index.html -> app-root changes to hinv-root; then in app.component.ts, change app-root to hinv-root; ng serve again in cmd
+-The purpose of prefix is to avoid conflict with other existed html tag
+
+12. run cmd: ng serve (execute the app)
+13. Install Angular Language Service Extension
+
+14. run cmd at terminal: ng g c rooms (to create component of rooms. Rooms is the name of component)
+
+Note of behaviour and property in Angular:
+Properties: [innerText], [hidden] 
+Action: (click)
+
+Cheat key:
+Ctrl + p : open file in browser F12
+
+Note of Directives:
+-Directives is an reusable function / feature to change the appearance of the application 
+-Directives can implement all lifecycle hook.
+-Directive wont be having a template file, but component file can have template file
+-Strucutural Directives (change behaviour of app), Attribute Directives
+-Built-in Directives: *ngIf, *ngFor, *ngSwitch, ngClass, ngStyle
+-rely on *ngIf instead of hidden attribute
+-condition??elseResult
+
+Note of Pipe:
+-used for data transformation
+-Built-in pipes: eg. Long Date to Short Date, currency conversion
+-Suggested to use server-side pagination or server side filtering and not pipe slice
+
+Setup Bootstrap:
+1. Install bootstrap: https://valor-software.com/ngx-bootstrap/#/ or Google: ngx-bootstrap
+2. run cmd at terminal: ng add ngx-bootstrap (to add bootstrap into angular project)
+OR (if not working)
+@run cmd at terminal: ng add @ng-bootstrap/ng-bootstrap
+npm i bootstrap
+3. @Go to realinventoryapp\node_modules\bootstrap\dist\css\bootstrap.min.css to copy the relative path
+4. @paste at styles.scss: @import '.\bootstrap\dist\css\bootstrap.min.css'
+
+Note for Lifecycle Hook:
+1. constructor is used for injecting the services
+2.oninit is use to write logic
+3. constructor should not have blocking code (what is blocking code? like logic?)
+4.eg. ngInit, ngOnChanges, ngDoCheck, ngDestroy
+5.
