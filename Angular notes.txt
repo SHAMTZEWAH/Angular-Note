@@ -1,4 +1,5 @@
-C:\ProgramData\chocolatey\bin\choco.exe
+Src: https://github.com/santoshyadavdev/hotelinventory
+
 Setup Typescript
 1. Install Node.js
 2. Open Visual Studio Code in Admin
@@ -38,6 +39,7 @@ https://www.c-sharpcorner.com/article/how-to-fix-ps1-can-not-be-loaded-because-r
 Alternative from step 5-10:
 11. Delete realinventory folder > run cmd: ng new hotelinventoryapp
 12. To uninstall angular: npm uninstall -g @angular/cli
+npm cache verify
 
 Note: 
 -Angular.json is a file that relates to your workspace.
@@ -87,10 +89,30 @@ OR (if not working)
 npm i bootstrap
 3. @Go to realinventoryapp\node_modules\bootstrap\dist\css\bootstrap.min.css to copy the relative path
 4. @paste at styles.scss: @import '.\bootstrap\dist\css\bootstrap.min.css'
+Issue: C:/Users/User/AppData/Roaming/npm/node_modules/@angular/cli/lib/config/schema.json" cannot resolve
+Solution: npm install @angular/cli updated
 
 Note for Lifecycle Hook:
 1. constructor is used for injecting the services
 2.oninit is use to write logic
 3. constructor should not have blocking code (what is blocking code? like logic?)
 4.eg. ngInit, ngOnChanges, ngDoCheck, ngDestroy
-5.
+5. Component comm. : interaction between component like room and customer maybe
+6. Oninit is to render things, not retrieve / transfer data
+7. Concept of immutability is important when using state management technique (ngrx, ngxs). Immutability means that it will always return new instance.
+The purpose of immutability is to avoid checking the changes on the original instance that checking the changes from view is expensive. Therefore, return a new instance is better.
+8. when new value is obtained, ngOnchanges is involved. For logging purpose.
+9. DoCheck = OnChanges in expensive version
+10. ngAfterViewInit = load a component using view child (Example: Header)
+=when every component is ready and initialized, therefore, it is safe to use them
+11. ngAfterViewChecked = A stage where the detected changed-check cycle is completed for a component view
+12. Development mode vs Production mode
+run change detection twice vs 
+ExpressionChangedAfterItHasBeenCheckedError is throw becuz previous value is undefined. NO WORRY! But if in Production Mode, then GG
+13. Dynamic component (ng-template): can help to render other template?? (Example: dynamically load the room component)
+14. 
+
+Setup Additional Angular Extensions / Features:
+1. Check on the (Besides Settings > More Tools > Rendering (near Styles, Computed, Properties there) > Paint Flashing) to observe changes / rendering components
+2. Install Angular Dev Tools: https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh
+3.
